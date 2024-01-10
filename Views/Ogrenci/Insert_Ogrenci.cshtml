@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Insert_Ogrenci";
+}
+@model OgrenciModel
+
+<h2>Öğrenci Ekle</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Ogrenci" asp-action="Insert_Ogrenci" method="post">
+            <div class="mb-3">
+                <label asp-for="FirstName" class="form-label">Öğrenci Adı</label>
+                <input type="text" class="form-control" asp-for="FirstName">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LastName" class="form-label">Öğrenci Soyadı</label>
+                <input type="text" class="form-control" asp-for="LastName">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Grade" class="form-label">Sınıfı</label>
+                <input type="text" class="form-control" asp-for="Grade">
+
+                <span asp-validation-for="Grade" class="text-danger"></span>
+            </div>
+@*             <div class="mb-3">
+                <label asp-for="Assignments" class="form-label">Ödevi</label>
+                <input type="text" class="form-control" asp-for="Assignments">
+                <span asp-validation-for="Assignments" class="text-danger"></span>
+            </div> *@
+
+            <div class="mb-3">
+                <a asp-action="Index" class="btn btn-dark">Geri Dön</a>
+                <input type="submit" value="Kaydet" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"></partial>
+}

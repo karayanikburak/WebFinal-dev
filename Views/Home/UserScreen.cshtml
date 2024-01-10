@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "_layoutAdminLTE";
+}
+@model List<User>
+
+
+ <h2>Kayıtlı Kullanıcılar</h2>
+<table class="table table-bordered">
+    <tr>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Ad-Soyad</th>
+            <th>Nickname</th>
+            <th>E-Mail</th>
+
+
+        </tr>
+    </thead>
+
+    <tbody>
+            @foreach (var user in Model)
+            {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.FullName </td>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                
+            </tr>
+            }
+    </tbody>
+
+
+</table>
+

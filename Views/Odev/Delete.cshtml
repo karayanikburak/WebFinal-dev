@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Delete";
+}
+
+@model OdevModel
+<h1>Ödev Sil</h1>
+<h3>"<b>@Model.Name</b>" Adlı Ödev Silinecektir Onaylıyor musunuz?</h3>
+<form asp-controller="Odev" asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <a asp-action="Index" class="btn btn-outline-secondary">Geri Dön</a>
+    <input type="submit" value="Sil" class="btn btn-outline-danger" />
+</form>

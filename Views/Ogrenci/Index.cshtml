@@ -1,0 +1,59 @@
+﻿@{
+    Layout = "_layoutAdminLTE";
+}
+@model List<Students>
+
+
+<div class=container>
+    <div class="row pt-3 pb-4">
+        <h1>Öğrenci Görüntüleme Sayfası</h1>
+    </div>
+
+
+    <table class="table table-bordered">
+        <tr>
+        <thead>
+            <tr>
+                <th>Öğrenci ID</th>
+                <th>Öğrenci Adı</th>
+                <th>Öğrenci Soyadı</th>
+                <th>Öğrenci Sınıfı</th>
+
+
+            </tr>
+        </thead>
+
+        <tbody>
+                @foreach (var Students in Model)
+                {
+                <tr>
+                    <td>@Students.Id</td>
+                    <td>@Students.FirstName</td>
+                    <td>@Students.LastName</td>
+                    <td>@Students.Grade</td>
+                    <td>
+                        <a asp-controller="Ogrenci" asp-action="Detail" asp-route-id="@Students.Id" class="btn btn-info" style="color:white">Ödev Durumu</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Ogrenci" asp-action="Update" asp-route-id="@Students.Id" class="btn btn-success" style="">Güncelle</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Ogrenci" asp-action="Delete" asp-route-id="@Students.Id" class="btn btn-danger" style="">Sil</a>
+                    </td>
+
+                </tr>
+                }
+        </tbody>
+
+
+    </table>
+
+    <div class="row pt-3 pb-2 ">
+
+        <div>
+            <a asp-controller="Ogrenci" asp-action="Insert_Ogrenci" class="btn btn-warning" style="color:white"type="button"> Yeni Öğrenci Ekle</a>
+        </div>
+
+    </div>
+
+</div>

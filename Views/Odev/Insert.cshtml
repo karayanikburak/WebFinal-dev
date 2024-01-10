@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Insert";
+}
+@model OdevModel
+
+<h2>Ödev Ekle</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Odev" asp-action="Insert" method="post">
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Ödev Adı</label>
+                <input type="text" class="form-control" asp-for="Name">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label">Ödev Açıklaması</label>
+                <input type="text" class="form-control" asp-for="Description">
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CategoryName" class="form-label">Ödev Kategorisi</label>
+                <input type="text" class="form-control" asp-for="CategoryName">
+                
+                <span asp-validation-for="CategoryName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CategoryId" class="form-label">Ödev Kategori ID</label>
+                <input type="number" min="1" max="8" placeholder="Kategori Numarası(1-8)" class="form-control" asp-for="CategoryId">
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <a asp-action="Index" class="btn btn-dark">Geri Dön</a>
+                <input type="submit" value="Kaydet" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial"></partial>
+}

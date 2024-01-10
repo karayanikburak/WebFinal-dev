@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "_layoutAdminLTE";
+}
+@model List<Odev>
+
+<div class=container>
+    <div class="row pt-3 pb-4"> 
+        <h1>Ödev Görüntüleme Sayfası</h1>
+    </div>
+    
+
+    <table class="table table-bordered">
+        <tr>
+            <thead>
+                 <tr>
+                     <th>Ödev ID</th>
+                     <th>Ödev Ad</th>
+                     <th>Ödev Açıklama</th>
+                     <th>Ödev Kategori</th>
+                     <th>Ödev Kategori ID</th>
+
+                     
+                 </tr>
+            </thead>
+
+            <tbody>
+                @foreach(var Odev in Model)
+                {
+                    <tr>
+                        <td>@Odev.Id</td>
+                        <td>@Odev.Name</td>
+                        <td>@Odev.Description</td>
+                        <td>@Odev.CategoryName</td>
+                        <td>@Odev.CategoryId </td>
+                    <td>
+                        <a asp-controller="Odev" asp-action="Delete" asp-route-id="@Odev.Id" class="btn btn-info" style="width:150px">Hangi Öğrencide?</a>
+                    </td>
+                        <td>
+                            <a asp-controller="Odev" asp-action="Edit" asp-route-id="@Odev.Id" class="btn btn-success" style="width:100px">Güncelle</a>
+                        </td>
+                        <td>
+                            <a asp-controller="Odev" asp-action="Delete" asp-route-id="@Odev.Id" class="btn btn-danger" style="width:100px">Sil</a>
+                        </td>
+                     </tr>
+                }
+            </tbody>
+
+
+    </table>
+
+    <div class="row pt-3 pb-2 ">
+
+        <div>
+            <a asp-controller="Odev" asp-action="Insert" class="btn btn-warning" type="button"> Yeni Ödev Oluştur</a>
+        </div>
+
+    </div>
+
+</div>

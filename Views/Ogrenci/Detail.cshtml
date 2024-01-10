@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Detail";
+}
+@model OgrenciModel
+<h2>Öğrenci Ödev Detayı</h2>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <table class="table">
+            <tr>
+                <td><b>Adı Soyadı</b></td>
+                <td>@Model.FirstName @Model.LastName</td>
+            </tr>
+
+            <tr>
+                <td><b>Sınıfı</b></td>
+                <td>@Model.Grade</td>
+            </tr>
+
+            <tr>
+                <td><b>Ödevleri</b></td>
+                <td>@Model.Assignments</td>
+            </tr>
+            
+            </tr>
+        </table>
+
+        <a asp-action="Index" class="btn btn-outline-secondary">Geri Dön</a>
+        <a asp-action="Update" asp-route-id="@Model.Id" class="btn btn-outline-warning">Düzenle</a>
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-outline-danger">Sil</a>
+
+    </div>
+</div>

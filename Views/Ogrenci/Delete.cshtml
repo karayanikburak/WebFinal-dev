@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Delete";
+}
+
+@model OgrenciModel
+<h1>Öğrenci Sil</h1>
+<h3>"<b>@Model.FirstName @Model.LastName</b>" Silinecektir Onaylıyor Musunuz?</h3>
+<form asp-controller="Ogrenci" asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <a asp-action="Index" class="btn btn-outline-secondary">Geri Dön</a>
+    <input type="submit" value="Sil" class="btn btn-outline-danger" />
+</form>
